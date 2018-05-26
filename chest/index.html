@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" ng-app="libraryApp" ng-controller="menuCtrl">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/ATMO.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Librarium</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+    <!--  Paper Dashboard core CSS    -->
+    <link href="assets/css/paper-dashboard.css" rel="stylesheet"/>
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+    <!--  Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="https://vitalets.github.io/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div ng-include="'menu.html'"></div>
+
+</body>
+
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="assets/js/xeditable.min.js"></script>
+<script src="assets/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+<script src="controllers/home-controller.js"></script>
+<script src="controllers/browse-controller.js"></script>
+<script src="controllers/mybooks-controller.js"></script>
+<script src="controllers/user-controller.js"></script>
+
+
+<script>
+    var app = angular.module("libraryApp", ["ngRoute"]);
+
+    app.config( function($routeProvider) {
+        $routeProvider
+        .when("/", {
+            title: "HOME",
+            templateUrl: "views/home.html",
+            controller: "HomeController"
+        })
+        .when("/home", {
+            title: "HOME",
+            templateUrl: "views/home.html",
+            controller: "HomeController"
+        })
+        .when("/browse", {
+            title: "Select by Genre",
+            templateUrl: "views/browse.html",
+            controller: "BrowseController"
+        })
+        .when("/mybooks", {
+            title: "Bookshelf",
+            templateUrl: "views/mybooks.html",
+            controller: "MyBooksController"
+        })
+        .when("/user", {
+            title: "Profile",
+            templateUrl: "views/user.html",
+            controller: "UserController"
+        })
+    })
+
+    
+    
+</script>
+
+<script src="controllers/menu-controller.js"></script>
+
+</html>
