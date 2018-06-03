@@ -25,18 +25,17 @@
 </head>
 
 <body>
-    <div ng-if="myReg">
+    <!--<div ng-if="myReg">
         <div ng-include="'registration.html'"></div>
     </div>
     <div ng-if="!myReg">
-        <div ng-if="!myLogin">
-            <div ng-include="'login.html'"></div>
-        </div>
-        <div ng-if="myLogin">
-            <div ng-include="'menu.html'"></div>
-        </div>
+    </div>-->
+    <div ng-if="!myLogin">
+        <div ng-include="'login.html'"></div>
     </div>
-    
+    <div ng-if="!!myLogin">
+        <div ng-include="'menu.html'"></div>
+    </div>
 </body>
 
 <script src="assets/js/angular.min.js"></script>
@@ -68,7 +67,7 @@
             controller: "HomeController"
         })
         .when("/browse", {
-            title: "Select by Genre",
+            title: "Browse Books",
             templateUrl: "views/browse.html",
             controller: "BrowseController"
         })
