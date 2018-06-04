@@ -1,6 +1,6 @@
 <div class="content">
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row" ng-app="App" ng-controller="bookCtrl">
 			<div class="col-md-12">
 		
 				<table class='table table-responsive table-bordered'>
@@ -12,12 +12,12 @@
 						<th>Options</th>
 					</tr>
 					<tr ng-repeat = "book in books">
-						<td>{{book.cover}}</td>
+						<td>{{book.id}}</td>
 						<td>{{book.title}}</td>
 						<td>{{book.author}}</td>
 						<td>{{book.date}}</td>
 						<td>
-							<button class="btn btn-danger">Delete</button>
+							<button class="btn btn-danger">Remove</button>
 						</td>
 					</tr>
 					<tr>
@@ -26,7 +26,7 @@
 						<td>book.author</td>
 						<td>book.date</td>
 						<td>
-							<button class="btn btn-danger">Delete</button>
+							<button class="btn btn-danger">Remove</button>
 						</td>
 					</tr>
 				</table>
@@ -34,3 +34,18 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	var app = angular.module("App", []);
+	app.controller("bookCtrl", function($scope, $http) {
+		
+		$scope.books = [
+			{id:1, title: 'Do Androids Dream of Electric Sheep', author: 'Philip K. Dick', genre: 'Sci-fi', date: '1968'},
+			{id:2, title: 'Dune', author: 'Frank Herbert', genre: 'Sci-fi', date: '1965'},
+			{id:3, title: '1984', author: 'George Orwell', genre: 'Dystopia', date: '1949'},
+			{id:4, title: 'Foundation', author: 'Isaac Asimov', genre: 'Sci-fi', date: '1942'},
+			{id:5, title: 'Starship Troopers', author: 'Robert A. Heinlein', genre: 'Sci-fi', date: '1959'}
+		];
+		
+	});
+</script>

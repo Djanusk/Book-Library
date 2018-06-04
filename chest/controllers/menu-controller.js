@@ -20,11 +20,11 @@ app.controller("menuCtrl", function($scope, $location) {
         $scope.myLogin = false;
     }
     
-    /*$scope.login = function() {
+    $scope.login = function() {
         $scope.myLogin = true;
     }
 
-    $scope.register = function() {
+    /*$scope.register = function() {
         $scope.myReg = true;
     }
 
